@@ -1,7 +1,9 @@
-import React from "react";
+import React, { lazy } from 'react';
 import { Switch, Route } from "react-router-dom";
-import Home from "./templates/Home";
-import Test from "./templates/Test";
+
+const Home = lazy(() => import('./templates/Home'));
+const Test = lazy(() => import('./templates/Test'));
+
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster

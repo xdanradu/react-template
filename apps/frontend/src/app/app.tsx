@@ -1,18 +1,18 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { lazy, Suspense } from 'react';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Sidebar from './organisms/Sidebar';
 import Main from './Main';
 import Header from './organisms/Header';
 import Footer from './organisms/Footer';
-// const NavBar = lazy(() => import('./organisms/navbar/navbar'));
-// const Home = lazy(() => import('./pages/home/home'));
-// const Contact = lazy(() => import('./pages/contact/contact'));
+
 import './app.module.scss';
+const TopNavbar = lazy(() => import('./organisms/top-navbar/navbar'));
 
 export function App() {
   return (
       <>
+        <Suspense fallback={<div>Loading... </div>}>
+          <TopNavbar />
+        </Suspense>
         <Header />
         <Sidebar />
         <Main />
